@@ -20,7 +20,6 @@ class App extends Component {
               <input type="text" name="name" placeholder="Name"></input><br />
               <input type="text" name="mail" placeholder="Email"></input><br />
               <input type="submit" value="Send"></input>
-              <input type="reset" value="Reset"></input>
             </form>
           </p>
         </Grid>
