@@ -1,27 +1,50 @@
 import React, { Component } from 'react';
-import { Grid, Jumbotron } from 'react-bootstrap';
+import { Grid, Jumbotron, Well, FormControl, FormGroup, Button, Panel } from 'react-bootstrap';
 import logo from './logo.svg';
+import blockConcept from './block-concept.jpg';
+import hulkConcept from './hulk-concept.jpg';
+import policeConcept from './police-concept.jpg';
 import './App.css';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron>
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-          </header>
+        <Jumbotron style={{'background':'black'}}>
+            <img src={logo} alt="logo" />
         </Jumbotron>
         <Grid>
-          <p className="App-intro">
-            <h2>Sign up for updates on the next great board game</h2>
-            <h1 className="Game-title">Contagion</h1>
-            <form action="mailto:mail@tablebossgames.com" method="post" enctype="text/plain">
-              <input type="text" name="name" placeholder="Name"></input><br />
-              <input type="text" name="mail" placeholder="Email"></input><br />
-              <input type="submit" value="Send"></input>
-            </form>
-          </p>
+          <h1 className="Game-title">Contagion</h1>
+          <Panel>
+            <h2>Concept Art</h2>
+            <img src={blockConcept} alt="block-concept" height="250" width="250" />
+            <img src={hulkConcept} alt="block-concept" height="250" width="250" />
+            <img src={policeConcept} alt="block-concept" height="250" width="250" />
+          </Panel>
+          <Well>
+            <p>
+              <h2>Subscribe to Table Boss Games' Newsletter</h2>
+              <p>Receive announcements and updates on our upcoming table top adventure!</p>
+              <form>
+                <FormGroup
+                  controlId="formBasicText"
+                  //validationState={this.getValidationState()}
+                >
+                  <FormControl
+                    style={{'width':'30%', 'textAlign':'center', 'display':'inline-block'}}
+                    type="text"
+                    //value={this.state.value}
+                    placeholder="Email"
+                    //onChange={this.handleChange}
+                  />
+                  <Button type="submit">Submit</Button>
+                  <FormControl.Feedback />
+                </FormGroup>
+                
+              </form>
+              <p>We respect your <a href="">privacy</a>.</p>
+            </p>
+          </Well>
         </Grid>
       </div>
     );
