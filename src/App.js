@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Grid, Jumbotron, Well, FormControl, FormGroup, Button, Panel } from 'react-bootstrap';
+import { Grid, Jumbotron, Well, Panel } from 'react-bootstrap';
 import logo from './logo.svg';
 import blockConcept from './block-concept.jpg';
 import hulkConcept from './hulk-concept.jpg';
@@ -25,22 +25,10 @@ class App extends Component {
             <p>
               <h2>Subscribe to Table Boss Games' Newsletter</h2>
               <p>Receive announcements and updates on our upcoming table top adventure!</p>
-              <form>
-                <FormGroup
-                  controlId="formBasicText"
-                  //validationState={this.getValidationState()}
-                >
-                  <FormControl
-                    style={{'width':'30%', 'textAlign':'center', 'display':'inline-block'}}
-                    type="text"
-                    //value={this.state.value}
-                    placeholder="Email"
-                    //onChange={this.handleChange}
-                  />
-                  <Button type="submit">Submit</Button>
-                  <FormControl.Feedback />
-                </FormGroup>
-                
+              <form action="https://formspree.io/subscribe@tablebossgames.com"
+                method="POST">
+                <input type="email" placeholder="Email" name="_replyto" />
+                <input type="submit" value="Subscribe" />
               </form>
               <p>We respect your <a href="">privacy</a>.</p>
             </p>
