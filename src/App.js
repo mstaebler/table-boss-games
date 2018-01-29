@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { Grid, Jumbotron, Well, Panel } from 'react-bootstrap';
-import logo from './logo.svg';
+import { Grid, Jumbotron, Well, Panel, Navbar, Nav, NavItem } from 'react-bootstrap';
+import banner from './banner.jpg';
+//import logo from './logo.svg';
 import blockConcept from './block-concept.jpg';
 import hulkConcept from './hulk-concept.jpg';
 import policeConcept from './police-concept.jpg';
@@ -10,11 +11,37 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Jumbotron style={{'background':'black'}}>
-            <img src={logo} alt="logo" />
+        <Navbar inverse collapseOnSelect>
+        <Navbar.Header>
+          <Navbar.Toggle />
+        </Navbar.Header>
+        <Navbar.Collapse>
+          <Nav>
+            <NavItem eventKey={1} href="/">
+              Home
+            </NavItem>
+            <NavItem eventKey={2} href="/contact">
+              Contact
+            </NavItem>
+            <NavItem eventKey={3} href="/about">
+              About
+            </NavItem>
+          </Nav>
+          <Nav pullRight>
+            <NavItem eventKey={1} href="https://www.facebook.com/TableBossGames/">
+              Facebook
+            </NavItem>
+            <NavItem eventKey={2} href="https://www.instagram.com/tablebossgames/">
+              Instagram
+            </NavItem>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
+        <Jumbotron>
+            <img src={banner} alt="banner" />
         </Jumbotron>
         <Grid>
-          <h1 className="Game-title">Contagion</h1>
+          <h1 className="Game-title">Extraction</h1>
           <Panel>
             <h2>Concept Art</h2>
             <img src={blockConcept} alt="block-concept" height="250" width="250" />
@@ -34,6 +61,7 @@ class App extends Component {
             </p>
           </Well>
         </Grid>
+        <p style={{"textAlign":"center"}}>© 2018 Table Boss Games</p>
       </div>
     );
   }
